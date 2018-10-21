@@ -7,46 +7,95 @@ public class Polyclinic {
     private String address;
     private PatientsCard cards[];
 
+    /**
+     * Constructor which sets clinic number and address
+     * Patients cards array is empty
+     * @param num
+     * clinic number to set
+     * @param address
+     * address to set
+     */
     public Polyclinic(int num, String address) {
         this.num = num;
         this.address = address;
         this.cards = new PatientsCard[0];
     }
 
+    /**
+     * Constructor which sets clinic number, its address and
+     * Patients cards array
+     * @param num
+     * clinic number to set
+     * @param address
+     * address to set
+     * @param cards
+     * link to the array on patients cards to set
+     */
     public Polyclinic(int num, String address, PatientsCard[] cards) {
         this.num = num;
         this.address = address;
         this.cards = cards;
     }
 
+    /**
+     * @return clinic number
+     */
     public int getNum() {
         return num;
     }
 
+    /**
+     * @param num
+     * clinic number to set
+     */
     public void setNum(int num) {
         this.num = num;
     }
 
+    /**
+     * @return address
+     * get address of teh clinic
+     */
     public String getAddress() {
         return address;
     }
 
+    /**
+     * @param address
+     * address to set
+     */
     public void setAddress(String address) {
         this.address = address;
     }
 
+    /**
+     * @return link to an array containing Patients Cards
+     *
+     */
     public PatientsCard[] getCards() {
         return cards;
     }
 
+    /**
+     * @param cards
+     * set array containing patients cards
+     */
     public void setCards(PatientsCard[] cards) {
         this.cards = cards;
     }
 
+    /**
+     * @return length of patients cards containing array
+     */
     public int getCardsLength() {
         return this.cards.length;
     }
 
+    /**
+     * @param insuranceId
+     * insurance id to find
+     * @return patient card
+     */
     public PatientsCard getPatient(int insuranceId) {
         for(PatientsCard p: this.cards) {
             if (insuranceId == p.getInsuranceId())
@@ -55,6 +104,12 @@ public class Polyclinic {
         return null;
     }
 
+    /**
+     * find patients, who live by specified address
+     * @param address
+     * address where to search
+     * @return array containing patients cards
+     */
     public PatientsCard[] getPatients(String address) {
         ArrayList<PatientsCard> patients = new ArrayList<>();
         for (PatientsCard p : this.cards) {
@@ -67,6 +122,11 @@ public class Polyclinic {
             return (PatientsCard[]) patients.toArray();
     }
 
+    /**
+     *
+     * @param pCard
+     * patient card to add
+     */
     public void addPatient(PatientsCard pCard) {
         int initLength = this.getCardsLength();
         PatientsCard[] newArray = new PatientsCard[initLength + 1];
@@ -75,6 +135,11 @@ public class Polyclinic {
         this.cards = newArray;
     }
 
+    /**
+     * get link to the array containing patients of the clinic
+     * sorted by their addresses
+     * @return array containing patients cards
+     */
      public PatientsCard[] getPatientsSorted() {
          int initLength = this.getCardsLength();
          PatientsCard[] sortedArray = new PatientsCard[initLength];
@@ -84,6 +149,11 @@ public class Polyclinic {
          return sortedArray;
      }
 
+    /**
+     * delete patient card with specified id
+     * @param insuranceId
+     * medical insurance id to delete
+     */
      public void deleteCard(int insuranceId) {
         ArrayList<PatientsCard> newCardsArray = new ArrayList<>(Arrays.asList(this.cards));
         for(PatientsCard pCard : this.cards) {

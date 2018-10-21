@@ -5,8 +5,12 @@ public class PatientsCard {
     private int insuranceId;
 
     /**
+     * Constructor which creates patient card with specified first and last name.
+     * Medical insurance id will be set to 0.
      * @param firstName
+     * first name to set
      * @param lastName
+     * last name to set
      */
     public PatientsCard(String firstName, String lastName) {
         this.firstName = firstName;
@@ -15,27 +19,39 @@ public class PatientsCard {
     }
 
     /**
+     * Constructor which creates patient card with specified first name,
+     * last name and address.
+     * Mecical insurance id will be set to 0.
      * @param firstName
+     * first name to set
      * @param lastName
-     * @param adress
+     * last name to set
+     * @param address
+     * address to set
      */
-    public PatientsCard(String firstName, String lastName, String adress) {
+    public PatientsCard(String firstName, String lastName, String address) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.address = adress;
+        this.address = address;
         this.insuranceId = 0;
     }
 
     /**
+     * Constructor which creates patient card with specified first name,
+     * last name, address and medical insurance id
      * @param firstName
+     * first name to set
      * @param lastName
-     * @param adress
+     * last name to set
+     * @param address
+     * address to set
      * @param insuranceId
+     * medical insurance id to set
      */
-    public PatientsCard(String firstName, String lastName, String adress, int insuranceId) {
+    public PatientsCard(String firstName, String lastName, String address, int insuranceId) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.address = adress;
+        this.address = address;
         this.insuranceId = insuranceId;
     }
 
@@ -48,6 +64,7 @@ public class PatientsCard {
 
     /**
      * @param firstName
+     * first name of person to set
      */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
@@ -55,7 +72,7 @@ public class PatientsCard {
 
     /**
      *
-     * @return lastName
+     * @return last name of person
      */
     public String getLastName() {
         return lastName;
@@ -63,13 +80,14 @@ public class PatientsCard {
 
     /**
      * @param lastName
+     * last name to set
      */
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
     /**
-     * @return address
+     * @return address of the person
      */
     public String getAddress() {
         return address;
@@ -77,13 +95,14 @@ public class PatientsCard {
 
     /**
      * @param address
+     * address to set
      */
     public void setAddress(String address) {
         this.address = address;
     }
 
     /**
-     * @return insuranceId
+     * @return medical insurance id
      */
     public int getInsuranceId() {
         return insuranceId;
@@ -91,6 +110,7 @@ public class PatientsCard {
 
     /**
      * @param insuranceId
+     * medical insurance id to set
      */
     public void setInsuranceId(int insuranceId) {
         this.insuranceId = insuranceId;
