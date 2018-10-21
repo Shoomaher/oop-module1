@@ -1,7 +1,7 @@
 public class PatientsCard {
     private String firstName;
     private String lastName;
-    private String adress;
+    private String address;
     private int insuranceId;
 
     public PatientsCard(String firstName, String lastName) {
@@ -13,14 +13,14 @@ public class PatientsCard {
     public PatientsCard(String firstName, String lastName, String adress) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.adress = adress;
+        this.address = adress;
         this.insuranceId = 0;
     }
 
     public PatientsCard(String firstName, String lastName, String adress, int insuranceId) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.adress = adress;
+        this.address = adress;
         this.insuranceId = insuranceId;
     }
 
@@ -40,12 +40,12 @@ public class PatientsCard {
         this.lastName = lastName;
     }
 
-    public String getAdress() {
-        return adress;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public int getInsuranceId() {
