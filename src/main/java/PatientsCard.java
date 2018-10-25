@@ -2,11 +2,11 @@ public class PatientsCard {
     private String firstName;
     private String lastName;
     private String address;
-    private int insuranceId;
+    private MedicalInsurancePolicy insurancePolicy;
 
     /**
      * Constructor which creates patient card with specified first and last name.
-     * Medical insurance id will be set to 0.
+     * Insurance policy will be set to null
      * @param firstName
      * first name to set
      * @param lastName
@@ -15,13 +15,13 @@ public class PatientsCard {
     public PatientsCard(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.insuranceId = 0;
+        this.insurancePolicy = null;
     }
 
     /**
      * Constructor which creates patient card with specified first name,
      * last name and address.
-     * Mecical insurance id will be set to 0.
+     * Insurance policy will be set to null
      * @param firstName
      * first name to set
      * @param lastName
@@ -33,26 +33,26 @@ public class PatientsCard {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
-        this.insuranceId = 0;
+        this.insurancePolicy = null;
     }
 
     /**
      * Constructor which creates patient card with specified first name,
-     * last name, address and medical insurance id
+     * last name, address and medical insurance policy
      * @param firstName
      * first name to set
      * @param lastName
      * last name to set
      * @param address
      * address to set
-     * @param insuranceId
-     * medical insurance id to set
+     * @param insurancePolicy
+     * medical insurance policy to set
      */
-    public PatientsCard(String firstName, String lastName, String address, int insuranceId) {
+    public PatientsCard(String firstName, String lastName, String address, MedicalInsurancePolicy insurancePolicy) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
-        this.insuranceId = insuranceId;
+        this.insurancePolicy = insurancePolicy;
     }
 
     /**
@@ -107,19 +107,19 @@ public class PatientsCard {
     }
 
     /**
-     * get medical insurance id
-     * @return medical insurance id
+     * get medical insurance policy
+     * @return insurance policy
      */
-    public int getInsuranceId() {
-        return insuranceId;
+    public MedicalInsurancePolicy getInsurancePolicy() {
+        return insurancePolicy;
     }
 
     /**
-     * set medial insurance id
-     * @param insuranceId
-     * medical insurance id to set
+     * set medial insurance policy
+     * @param insurancePolicy
+     * medical insurance policy to set
      */
-    public void setInsuranceId(int insuranceId) {
-        this.insuranceId = insuranceId;
+    public void setInsuranceId(MedicalInsurancePolicy insurancePolicy) {
+        this.insurancePolicy = insurancePolicy;
     }
 }
