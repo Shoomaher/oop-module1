@@ -4,14 +4,15 @@ public class Bill {
     private Date date;
     private int amountToPay;
     private enum typeOfService {
+        body_check,
         dentistry,
         endocrinology,
-        surgery,
-        body_check,
+        gynecology,
         ophthalmology,
         otolaryngia,
-        traumatology,
-        gynecology
+        surgery,
+        traumatology
+
     }
 
     /**
