@@ -5,7 +5,7 @@ import java.util.Comparator;
 public class Polyclinic {
     private int num;
     private String address;
-    private PatientsCard cards[];
+    private SocialPatientsCard cards[];
 
     /**
      * Constructor which sets clinic number and address
@@ -18,7 +18,7 @@ public class Polyclinic {
     public Polyclinic(int num, String address) {
         this.num = num;
         this.address = address;
-        this.cards = new PatientsCard[0];
+        this.cards = new SocialPatientsCard[0];
     }
 
     /**
@@ -31,7 +31,7 @@ public class Polyclinic {
      * @param cards
      * link to the array on patients cards to set
      */
-    public Polyclinic(int num, String address, PatientsCard[] cards) {
+    public Polyclinic(int num, String address, SocialPatientsCard[] cards) {
         this.num = num;
         this.address = address;
         this.cards = cards;
@@ -75,7 +75,7 @@ public class Polyclinic {
      * get link to the array of patients cards
      * @return link to an array containing Patients Cards
      */
-    public PatientsCard[] getCards() {
+    public SocialPatientsCard[] getCards() {
         return cards;
     }
 
@@ -84,7 +84,7 @@ public class Polyclinic {
      * @param cards
      * array of cards to set
      */
-    public void setCards(PatientsCard[] cards) {
+    public void setCards(SocialPatientsCard[] cards) {
         this.cards = cards;
     }
 
@@ -102,8 +102,8 @@ public class Polyclinic {
      * insurance id to find
      * @return patient card
      */
-    public PatientsCard getPatient(int insuranceId) {
-        for(PatientsCard p: this.cards) {
+    public SocialPatientsCard getPatient(int insuranceId) {
+        for(SocialPatientsCard p: this.cards) {
             if (insuranceId == p.getInsurancePolicy().getPolicyId())
                 return p;
         }
@@ -116,16 +116,16 @@ public class Polyclinic {
      * address where to search
      * @return array containing patients cards
      */
-    public PatientsCard[] getPatients(String address) {
-        ArrayList<PatientsCard> patients = new ArrayList<>();
-        for (PatientsCard p : this.cards) {
+    public SocialPatientsCard[] getPatients(String address) {
+        ArrayList<SocialPatientsCard> patients = new ArrayList<>();
+        for (SocialPatientsCard p : this.cards) {
             if (address.equals(p.getAddress()))
                 patients.add(p);
         }
         if (patients.size() == 0)
             return null;
         else
-            return (PatientsCard[]) patients.toArray();
+            return (SocialPatientsCard[]) patients.toArray();
     }
 
     /**
@@ -133,9 +133,9 @@ public class Polyclinic {
      * @param pCard
      * patient card to add
      */
-    public void addPatient(PatientsCard pCard) {
+    public void addPatient(SocialPatientsCard pCard) {
         int initLength = this.getCardsLength();
-        PatientsCard[] newArray = new PatientsCard[initLength + 1];
+        SocialPatientsCard[] newArray = new SocialPatientsCard[initLength + 1];
         System.arraycopy(this.cards, 0, newArray, 0, initLength);
         newArray[initLength+1] = pCard;
         this.cards = newArray;
@@ -146,12 +146,12 @@ public class Polyclinic {
      * sorted by their addresses
      * @return array containing patients cards
      */
-     public PatientsCard[] getPatientsSorted() {
+     public SocialPatientsCard[] getPatientsSorted() {
          int initLength = this.getCardsLength();
-         PatientsCard[] sortedArray = new PatientsCard[initLength];
+         SocialPatientsCard[] sortedArray = new SocialPatientsCard[initLength];
          System.arraycopy(this.cards, 0, sortedArray, 0, initLength);
 
-         Arrays.sort(sortedArray, Comparator.comparing(PatientsCard::getAddress));
+         Arrays.sort(sortedArray, Comparator.comparing(SocialPatientsCard::getAddress));
          return sortedArray;
      }
 
@@ -161,12 +161,12 @@ public class Polyclinic {
      * medical insurance id to delete
      */
      public void deleteCard(int insuranceId) {
-        ArrayList<PatientsCard> newCardsArray = new ArrayList<>(Arrays.asList(this.cards));
-        for(PatientsCard pCard : this.cards) {
+        ArrayList<SocialPatientsCard> newCardsArray = new ArrayList<>(Arrays.asList(this.cards));
+        for(SocialPatientsCard pCard : this.cards) {
             if (pCard.getInsurancePolicy().getPolicyId() == insuranceId)
                 newCardsArray.remove(pCard);
         }
-        this.cards = (PatientsCard[]) newCardsArray.toArray();
+        this.cards = (SocialPatientsCard[]) newCardsArray.toArray();
     }
 
 }
