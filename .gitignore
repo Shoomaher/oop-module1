@@ -2,4 +2,4 @@ docs/*
 *.class
 .idea/
 .idea/*
-*.xml
+*.xml.idea/
