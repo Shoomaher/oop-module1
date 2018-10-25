@@ -97,14 +97,14 @@ public class Polyclinic {
     }
 
     /**
-     * get patient with the specified medical insurance policy
-     * @param insurancePolicy
+     * get patient with the specified medical insurance id
+     * @param insuranceId
      * insurance id to find
      * @return patient card
      */
-    public PatientsCard getPatient(MedicalInsurancePolicy insurancePolicy) {
+    public PatientsCard getPatient(int insuranceId) {
         for(PatientsCard p: this.cards) {
-            if (insurancePolicy.equals(p.getInsurancePolicy()))
+            if (insuranceId == p.getInsurancePolicy().getPolicyId())
                 return p;
         }
         return null;
@@ -156,16 +156,17 @@ public class Polyclinic {
      }
 
     /**
-     * delete patient card with specified medical insurance policy
-     * @param insurancePolicy
-     * medical insurance policy to delete
+     * delete patient card with specified id
+     * @param insuranceId
+     * medical insurance id to delete
      */
-     public void deleteCard(MedicalInsurancePolicy insurancePolicy) {
+     public void deleteCard(int insuranceId) {
         ArrayList<PatientsCard> newCardsArray = new ArrayList<>(Arrays.asList(this.cards));
         for(PatientsCard pCard : this.cards) {
-            if (pCard.getInsurancePolicy().equals(insurancePolicy))
+            if (pCard.getInsurancePolicy().getPolicyId() == insuranceId)
                 newCardsArray.remove(pCard);
         }
         this.cards = (PatientsCard[]) newCardsArray.toArray();
     }
+
 }
