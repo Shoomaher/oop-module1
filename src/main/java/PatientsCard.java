@@ -56,6 +56,7 @@ public class PatientsCard {
     }
 
     /**
+     * get the first name of the person
      * @return firstName
      */
     public String getFirstName() {
@@ -63,15 +64,16 @@ public class PatientsCard {
     }
 
     /**
+     * set the first name of the person
      * @param firstName
-     * first name of person to set
+     * first name to set
      */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
     /**
-     *
+     * get last name of the peson
      * @return last name of person
      */
     public String getLastName() {
@@ -79,6 +81,7 @@ public class PatientsCard {
     }
 
     /**
+     * set the first name of person
      * @param lastName
      * last name to set
      */
@@ -87,6 +90,7 @@ public class PatientsCard {
     }
 
     /**
+     * get address of the person
      * @return address of the person
      */
     public String getAddress() {
@@ -94,6 +98,7 @@ public class PatientsCard {
     }
 
     /**
+     * set address of the person
      * @param address
      * address to set
      */
@@ -102,6 +107,7 @@ public class PatientsCard {
     }
 
     /**
+     * get medical insurance id
      * @return medical insurance id
      */
     public int getInsuranceId() {
@@ -109,6 +115,7 @@ public class PatientsCard {
     }
 
     /**
+     * set medial insurance id
      * @param insuranceId
      * medical insurance id to set
      */

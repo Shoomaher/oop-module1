@@ -38,6 +38,7 @@ public class Polyclinic {
     }
 
     /**
+     * get number of the clinic
      * @return clinic number
      */
     public int getNum() {
@@ -45,6 +46,7 @@ public class Polyclinic {
     }
 
     /**
+     * set number of the clinic
      * @param num
      * clinic number to set
      */
@@ -53,14 +55,15 @@ public class Polyclinic {
     }
 
     /**
+     * get address of the clinic
      * @return address
-     * get address of teh clinic
      */
     public String getAddress() {
         return address;
     }
 
     /**
+     * set address of the clinic
      * @param address
      * address to set
      */
@@ -69,22 +72,24 @@ public class Polyclinic {
     }
 
     /**
+     * get link to the array of patients cards
      * @return link to an array containing Patients Cards
-     *
      */
     public PatientsCard[] getCards() {
         return cards;
     }
 
     /**
-     * @param cards
      * set array containing patients cards
+     * @param cards
+     * array of cards to set
      */
     public void setCards(PatientsCard[] cards) {
         this.cards = cards;
     }
 
     /**
+     * get size of the array, containing patients cards
      * @return length of patients cards containing array
      */
     public int getCardsLength() {
@@ -92,6 +97,7 @@ public class Polyclinic {
     }
 
     /**
+     * get patient with the specified medical insurance id
      * @param insuranceId
      * insurance id to find
      * @return patient card
@@ -123,7 +129,7 @@ public class Polyclinic {
     }
 
     /**
-     *
+     * add patient card to the clinic
      * @param pCard
      * patient card to add
      */
