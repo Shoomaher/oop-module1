@@ -4,7 +4,7 @@ import java.util.Date;
 /**
  * The type Payed patients card.
  */
-public class PayedPatientsCard implements PatientsCard {
+public class PaidPatientsCard implements PatientsCard {
 
     private String firstName;
     private String lastName;
@@ -15,18 +15,17 @@ public class PayedPatientsCard implements PatientsCard {
     /**
      * Instantiates a new Payed patients card.
      */
-    public PayedPatientsCard() {
+    public PaidPatientsCard() {
         this.bills = new ArrayList<>(0);
     }
 
 
     /**
      * Instantiates a new Payed patients card.
-     *
      * @param firstName the first name
      * @param lastName  the last name
      */
-    public PayedPatientsCard(String firstName, String lastName) {
+    public PaidPatientsCard(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.insurancePolicy = null;
@@ -34,7 +33,12 @@ public class PayedPatientsCard implements PatientsCard {
         this.bills = new ArrayList<>(0);
     }
 
-    public PayedPatientsCard(String firstName, String lastName, String address) {
+    /**
+     * Instantiates a new Paid patients card.
+     * @param lastName  the last name
+     * @param address   the address
+     */
+    public PaidPatientsCard(String firstName, String lastName, String address) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
@@ -42,7 +46,14 @@ public class PayedPatientsCard implements PatientsCard {
         this.bills = new ArrayList<>(0);
     }
 
-    public PayedPatientsCard(String firstName, String lastName, String address, MedicalInsurancePolicy insurancePolicy) {
+    /**
+     * Instantiates a new Paid patients card.
+     * @param firstName       the first name
+     * @param lastName        the last name
+     * @param address         the address
+     * @param insurancePolicy the insurance policy
+     */
+    public PaidPatientsCard(String firstName, String lastName, String address, MedicalInsurancePolicy insurancePolicy) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
@@ -50,7 +61,15 @@ public class PayedPatientsCard implements PatientsCard {
         this.bills = new ArrayList<>(0);
     }
 
-    public PayedPatientsCard(String firstName, String lastName, String address, MedicalInsurancePolicy insurancePolicy, ArrayList<Bill> payedBills) {
+    /**
+     * Instantiates a new Paid patients card.
+     * @param firstName       the first name
+     * @param lastName        the last name
+     * @param address         the address
+     * @param insurancePolicy the insurance policy
+     * @param payedBills      the payed bills
+     */
+    public PaidPatientsCard(String firstName, String lastName, String address, MedicalInsurancePolicy insurancePolicy, ArrayList<Bill> payedBills) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
@@ -58,14 +77,26 @@ public class PayedPatientsCard implements PatientsCard {
         this.bills = payedBills;
     }
 
+    /**
+     * Gets bills.
+     * @return the bills
+     */
     public ArrayList<Bill> getBills() {
         return bills;
     }
 
+    /**
+     * Sets bills.
+     * @param bills the bills
+     */
     public void setBills(ArrayList<Bill> bills) {
         this.bills = bills;
     }
 
+    /**
+     * Gets total amount.
+     * @return the total amount
+     */
     public int getTotalAmount() {
         int sum = 0;
         for(Bill b:this.bills) {
@@ -74,6 +105,11 @@ public class PayedPatientsCard implements PatientsCard {
         return sum;
     }
 
+    /**
+     * Gets bills by date.
+     * @param date the date
+     * @return the bills by date
+     */
     public ArrayList<Bill> getBillsByDate(Date date) {
         ArrayList<Bill>  bills = new ArrayList<>(0);
         for(Bill b: this.bills) {
@@ -83,10 +119,19 @@ public class PayedPatientsCard implements PatientsCard {
         return bills;
     }
 
+    /**
+     * Add bill.
+     * @param bill the bill
+     */
     public void addBill(Bill bill) {
         this.bills.add(bill);
     }
 
+    /**
+     * Delete bill for specified date and amount
+     * @param date   the date
+     * @param amount the amount
+     */
     public void deleteBill(Date date, int amount) {
         ArrayList <Bill> currentBills = this.getBillsByDate(date);
         for(Bill b: currentBills) {
