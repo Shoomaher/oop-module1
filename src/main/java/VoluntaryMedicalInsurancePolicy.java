@@ -36,6 +36,8 @@ public class VoluntaryMedicalInsurancePolicy extends MedicalInsurancePolicy {
      * the amount to set
      */
     public void setInsuranceAmount(int insuranceAmount) {
+        if (insuranceAmount < 0)
+            throw new IllegalArgumentException();
         this.insuranceAmount = insuranceAmount;
     }
 

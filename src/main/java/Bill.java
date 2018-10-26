@@ -46,6 +46,8 @@ public class Bill {
      * the amount to set
      */
     public void setAmountToPay(int amountToPay) {
+        if (amountToPay < 0)
+            throw new IllegalArgumentException();
         this.amountToPay = amountToPay;
     }
 }

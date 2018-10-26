@@ -134,6 +134,9 @@ public class Polyclinic {
      * patient card to add
      */
     public void addPatient(SocialPatientsCard pCard) {
+        if (pCard == null)
+            throw new IllegalArgumentException();
+
         int initLength = this.getCardsLength();
         SocialPatientsCard[] newArray = new SocialPatientsCard[initLength + 1];
         System.arraycopy(this.cards, 0, newArray, 0, initLength);
