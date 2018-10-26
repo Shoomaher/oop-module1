@@ -35,6 +35,7 @@ public class PaidPatientsCard implements PatientsCard {
 
     /**
      * Instantiates a new Paid patients card.
+     * @param firstName the first name
      * @param lastName  the last name
      * @param address   the address
      */
@@ -121,6 +122,7 @@ public class PaidPatientsCard implements PatientsCard {
 
     /**
      * Add bill.
+     *
      * @param bill the bill
      */
     public void addBill(Bill bill) {
@@ -129,6 +131,7 @@ public class PaidPatientsCard implements PatientsCard {
 
     /**
      * Delete bill for specified date and amount
+     *
      * @param date   the date
      * @param amount the amount
      */
@@ -140,43 +143,49 @@ public class PaidPatientsCard implements PatientsCard {
         }
     }
 
-    @Override
     public String getFirstName() {
-        return null;
+        return this.firstName;
     }
 
-    @Override
     public void setFirstName(String name) {
-
+        this.firstName = name;
     }
 
-    @Override
     public String getLastName() {
-        return null;
+        return this.lastName;
     }
 
-    @Override
     public void setLastName(String name) {
-
+        this.lastName = name;
     }
 
-    @Override
     public String getAddress() {
-        return null;
+        return this.address;
     }
 
-    @Override
     public void setAddress(String address) {
-
+        this.address = address;
     }
 
-    @Override
     public MedicalInsurancePolicy getInsurancePolicy() {
-        return null;
+        return this.insurancePolicy;
     }
 
-    @Override
     public void setInsurancePolicy(MedicalInsurancePolicy insurancePolicy) {
+        this.insurancePolicy = insurancePolicy;
+    }
 
+    public boolean equals(Object obj) {
+        if (obj instanceof PaidPatientsCard
+                && this.firstName.equals(((PaidPatientsCard) obj).firstName)
+                && this.lastName.equals(((PaidPatientsCard) obj).lastName)
+                && this.address.equals(((PaidPatientsCard) obj).address)
+                && this.insurancePolicy.equals(((PaidPatientsCard) obj).insurancePolicy)
+                && this.bills.equals(((PaidPatientsCard) obj).bills)) {
+
+            return true;
+        } else {
+            return false;
+        }
     }
 }
