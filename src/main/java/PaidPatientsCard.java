@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Objects;
 
 /**
  * The type Payed patients card.
@@ -187,5 +188,15 @@ public class PaidPatientsCard implements PatientsCard {
         } else {
             return false;
         }
+    }
+
+    @Override
+    public int hashCode() {
+        return 123456789
+                ^ this.firstName.hashCode()
+                ^ this.lastName.hashCode()
+                ^ this.address.hashCode()
+                ^ this.insurancePolicy.hashCode()
+                ^ this.bills.hashCode();
     }
 }
