@@ -1,5 +1,6 @@
-public class SocialPatientsCard implements PatientsCard {
-    private String firstName;
+import java.util.Objects;
+
+public class SocialPatientsCard implements PatientsCard { private String firstName;
     private String lastName;
     private String address;
     private MedicalInsurancePolicy insurancePolicy;
@@ -99,5 +100,10 @@ public class SocialPatientsCard implements PatientsCard {
         } else {
             return false;
         }
+    }
+
+    @Override
+    public int hashCode() {
+        return 123456789 ^ this.firstName.hashCode() ^ this.lastName.hashCode() ^ this.address.hashCode() ^ insurancePolicy.hashCode();
     }
 }
