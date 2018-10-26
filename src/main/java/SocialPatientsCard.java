@@ -55,71 +55,49 @@ public class SocialPatientsCard implements PatientsCard {
         this.insurancePolicy = insurancePolicy;
     }
 
-    /**
-     * get the first name of the person
-     * @return firstName
-     */
     public String getFirstName() {
         return firstName;
     }
 
-    /**
-     * set the first name of the person
-     * @param firstName
-     * first name to set
-     */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
-    /**
-     * get last name of the peson
-     * @return last name of person
-     */
     public String getLastName() {
         return lastName;
     }
 
-    /**
-     * set the first name of person
-     * @param lastName
-     * last name to set
-     */
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
-    /**
-     * get address of the person
-     * @return address of the person
-     */
     public String getAddress() {
         return address;
     }
 
-    /**
-     * set address of the person
-     * @param address
-     * address to set
-     */
     public void setAddress(String address) {
         this.address = address;
     }
 
-    /**
-     * get medical insurance policy
-     * @return insurance policy
-     */
     public MedicalInsurancePolicy getInsurancePolicy() {
         return insurancePolicy;
     }
 
-    /**
-     * set medial insurance policy
-     * @param insurancePolicy
-     * medical insurance policy to set
-     */
     public void setInsurancePolicy(MedicalInsurancePolicy insurancePolicy) {
         this.insurancePolicy = insurancePolicy;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof SocialPatientsCard
+                && this.firstName.equals(((SocialPatientsCard) obj).firstName)
+                && this.lastName.equals(((SocialPatientsCard) obj).lastName)
+                && this.address.equals(((SocialPatientsCard) obj).address)
+                && this.insurancePolicy.equals(((SocialPatientsCard) obj).insurancePolicy)) {
+
+            return true;
+        } else {
+            return false;
+        }
     }
 }
