@@ -54,4 +54,16 @@ abstract class MedicalInsurancePolicy {
     public void setInsuranceCompanyName(String insuranceCompanyName) {
         this.insuranceCompanyName = insuranceCompanyName;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof MedicalInsurancePolicy
+                && this.policyId == ((MedicalInsurancePolicy) obj).policyId
+                && this.insuranceCompanyName.equals(((MedicalInsurancePolicy) obj).insuranceCompanyName)) {
+
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
