@@ -1,5 +1,4 @@
 import com.sun.istack.internal.Nullable;
-import sun.security.krb5.internal.PAData;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -122,7 +121,7 @@ public class Polyclinic {
         if (patients.size() == 0)
             return null;
         else
-            return (PatientsCard[]) patients.toArray();
+            return patients.toArray(new PatientsCard[patients.size()]);
     }
 
     /**
@@ -164,7 +163,7 @@ public class Polyclinic {
             if (pCard.getInsurancePolicy().getPolicyId() == insuranceId)
                 newCardsArray.remove(pCard);
         }
-         this.cards = (PatientsCard[]) newCardsArray.toArray();
+         this.cards = newCardsArray.toArray(new PatientsCard[newCardsArray.size()]);
      }
 
     /**
@@ -197,7 +196,7 @@ public class Polyclinic {
      * Count payed service clients
      * @return the amount of clients
      */
-    public int countPayedServiceClients() {
+    public int countPaidServiceClients() {
         int clients = 0;
         for(PatientsCard c: this.cards) {
             if (c instanceof PaidPatientsCard) {
@@ -222,7 +221,7 @@ public class Polyclinic {
                  ArrayList<Bill> bills = ((PaidPatientsCard) c).getBills();
                  for (Bill b : bills) {
                      Date billDate = b.getDate();
-                     if (billDate.getMonth() == month & billDate.getYear() == year) {
+                     if (billDate.getMonth() == month && billDate.getYear() == year) {
                          totalMoney += b.getAmountToPay();
                      }
                  }
