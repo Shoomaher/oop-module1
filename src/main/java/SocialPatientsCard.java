@@ -115,7 +115,7 @@ public class SocialPatientsCard implements PatientsCard { private String firstNa
         sb.append(lastName);
         sb.append("\nHis address: ");
         sb.append(address);
-        sb.append("\nHis medical insurance policy:");
+        sb.append("\nHis medical insurance policy: ");
         sb.append(insurancePolicy.toString());
         return sb.toString();
     }
