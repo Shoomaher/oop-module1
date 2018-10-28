@@ -199,4 +199,19 @@ public class PaidPatientsCard implements PatientsCard {
                 ^ this.insurancePolicy.hashCode()
                 ^ this.bills.hashCode();
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("Paid Patients Card\nHis first name: ");
+        sb.append(firstName);
+        sb.append("\nHis last name: ");
+        sb.append(lastName);
+        sb.append("\nHis address: ");
+        sb.append(address);
+        sb.append("\nHis medical insurance policy: ");
+        sb.append(insurancePolicy.toString());
+        sb.append("\nList of his bills: ");
+        sb.append(bills.toString());
+        return sb.toString();
+    }
 }

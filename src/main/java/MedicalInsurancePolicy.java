@@ -66,4 +66,13 @@ abstract class MedicalInsurancePolicy {
             return false;
         }
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("Medical insurance policy with id: ");
+        sb.append(policyId);
+        sb.append("\nOpened in ");
+        sb.append(insuranceCompanyName);
+        return sb.toString();
+    }
 }

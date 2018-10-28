@@ -1,3 +1,6 @@
+import com.sun.istack.internal.Nullable;
+import sun.security.krb5.internal.PAData;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -126,7 +129,7 @@ public class Polyclinic {
      * Add patient card to the clinic
      * @param pCard patient card to add
      */
-    public void addPatient(PatientsCard pCard) {
+    public void addPatient(@Nullable PatientsCard pCard) {
         if (pCard == null)
             throw new IllegalArgumentException();
 
@@ -227,4 +230,15 @@ public class Polyclinic {
          }
          return totalMoney;
      }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("Polyclinic number ");
+        sb.append(num);
+        sb.append("\nAddress of this polyclinic: ");
+        sb.append(address);
+        sb.append("\nIt contains these patients cards: ");
+        sb.append(Arrays.toString(cards));
+        return sb.toString();
+    }
 }

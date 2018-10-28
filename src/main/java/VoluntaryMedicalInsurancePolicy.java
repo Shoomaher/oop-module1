@@ -57,4 +57,17 @@ public class VoluntaryMedicalInsurancePolicy extends MedicalInsurancePolicy {
     public void setPayedInsuranceAmount(int payedInsuranceAmount) {
         this.payedInsuranceAmount = payedInsuranceAmount;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("Medical insurance policy with id: ");
+        sb.append(this.getPolicyId());
+        sb.append("\nOpened in ");
+        sb.append(this.getInsuranceCompanyName());
+        sb.append("\nInsurance amount: ");
+        sb.append(insuranceAmount);
+        sb.append("$\nPayed insurance amount: ");
+        sb.append(payedInsuranceAmount);
+        return sb.toString();
+    }
 }

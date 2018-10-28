@@ -50,4 +50,14 @@ public class Bill {
             throw new IllegalArgumentException();
         this.amountToPay = amountToPay;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("Bill ");
+        sb.append("for paying ");
+        sb.append(amountToPay);
+        sb.append("\nBy the date: ");
+        sb.append(date);
+        return sb.toString();
+    }
 }

@@ -106,4 +106,17 @@ public class SocialPatientsCard implements PatientsCard { private String firstNa
     public int hashCode() {
         return 123456789 ^ this.firstName.hashCode() ^ this.lastName.hashCode() ^ this.address.hashCode() ^ insurancePolicy.hashCode();
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("Social Patients Card\nHis first name: ");
+        sb.append(firstName);
+        sb.append("\nHis last name: ");
+        sb.append(lastName);
+        sb.append("\nHis address: ");
+        sb.append(address);
+        sb.append("\nHis medical insurance policy:");
+        sb.append(insurancePolicy.toString());
+        return sb.toString();
+    }
 }
